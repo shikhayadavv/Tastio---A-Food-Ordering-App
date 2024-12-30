@@ -3,7 +3,7 @@ export const CDN_URL =
 
 
 export const LOGO_URL =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyYjmR_9rPdlkastCqFR56iEza2AeROxwimQ&s";
+    "https://files.oaiusercontent.com/file-c9sXZhdPuwqrrQmPRk8ghvmD?se=2024-10-04T09%3A57%3A37Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D09262999-e863-4cff-bace-31a3c448a129.webp&sig=y1lqzYebzBxGd2L0xRJ%2BnTZuCyPiIh6n8ekf3VBDc3Y%3D";
 
 
 export const MENU_API =  

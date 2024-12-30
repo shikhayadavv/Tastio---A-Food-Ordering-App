@@ -1,8 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
     // Local State Variable - Super powerful variable
@@ -39,22 +40,25 @@ const Body = () => {
         <h1>
             You're Offline...
             Please check your internet connection!! 
-        </h1>)
+        </h1>);
+
+        const { loggedInUser, setUserName} = useContext(UserContext);
      
 
     return listOfRestaurants.length === 0 ?
     <Shimmer/> : (  
     <div className="body">
-        <div className="filter flex">
-            <div className="m-4 p-4">
+        <div className=" flex flex-row justify-end items-center bg-gray-50 p-3 mb-4 mt-4">
+            
                 <input type="text" 
-                className="border border-solid border-black" 
+                className="border border-solid border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 duration-300"
+                placeholder="Search Restaurants..." 
                 value={searchText}
                 onChange={(e) => {
                     setSearchText(e.target.value);
                 }}></input>
 
-                <button className="px-4 py-1 bg-green-300 m-4 rounded-lg"
+                <button className="ml-2 px-2 py-2 bg-blue-400 text-black rounded-lg hover:bg-blue-600 transition duration-300 shadow-md"
                 onClick={() => {
 
                     const filteredRestaurant = listOfRestaurants.filter(
@@ -66,10 +70,10 @@ const Body = () => {
                     setFilteredRestaurant(filteredRestaurant);
 
                 }}>Search</button>
-            </div>
+            
 
-            <div className="px-4 py-1 flex items-center">
-            <button className="px-4 py-1 bg-gray-200 rounded-lg" 
+            <div className="m-2 flex items-center mr-auto">
+            <button className="m-2 px-2 py-2 bg-green-400 text-black  rounded-lg shadow-md" 
             onClick={() => {
                 const filteredList = listOfRestaurants.filter(
                     (res) => res.info.avgRating > 4
@@ -79,6 +83,12 @@ const Body = () => {
 
                 Top Rated Restaurant</button>
             </div>
+            {/* <div className="m-2 flex items-center">
+                <label className="mr-2 text-gray-700 font-semibold">UserName: </label>
+            <input className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}></input>
+            </div> */}
             
         </div>
         <div className="res-container flex flex-wrap">

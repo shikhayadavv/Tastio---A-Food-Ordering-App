@@ -36,21 +36,23 @@
     - Contact
 
 
-Two types of Export/Imports
-
-- Default Export/Import
-export default Compenent;
-import Component from "path";
-
-
-- Named Export/Import
-export const Component;
-import {Component} from "path";
-
-
 .........
 # React Hooks
 (Normal JS utility functions)
 - useState() - used to generate Superpowerful State Variables in react.
 
 - useEffect() - 
+
+# 2 types of Routing in web apps
+- Client Side Routing 
+- Server Side Routing 
+
+
+.......
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch (action)
+- Selector
